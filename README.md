@@ -1,229 +1,200 @@
-# 🛒 SQL Retail Analytics Project
+🛒 SQL Retail Analytics Project
+📌 1. Project Overview
 
-## 📊 Project Overview
+This project demonstrates how SQL can be used to analyze retail sales data and generate business insights.
 
-This project demonstrates **SQL skills for Retail Analytics** using a simulated multi-store retail dataset.
-The goal is to analyze **sales performance, store performance, product trends, and customer behavior** using SQL queries commonly used by retail analysts.
+Using a simulated multi-store retail dataset, the analysis focuses on:
 
-The project mimics real-world analytics tasks performed in **supermarkets, fashion retail chains, and multi-store retail businesses**.
+Sales performance
 
----
+Store performance
 
-## 🎯 Objectives
+Product trends
 
-The project focuses on answering key retail business questions:
+Customer behavior
 
-* What are the **top performing stores**?
-* Which **products generate the highest revenue**?
-* How do **sales trends change month-to-month and year-to-year**?
-* Which **categories drive the most sales**?
-* How do **discounts and promotions impact revenue**?
-* Which **customer segments generate the most sales**?
+Promotion effectiveness
 
----
+The goal of this project is to simulate real-world tasks performed by retail data analysts in supermarkets and retail chains.
 
-## 🧱 Dataset Structure
+📊 2. Dataset Structure
 
-The dataset follows a **Retail Star Schema** commonly used in analytics systems.
+The dataset follows a star schema commonly used in retail analytics.
 
-### Fact Table
+Fact Table
 
-**Sales**
+Sales
 
-| Column         | Description               |
-| -------------- | ------------------------- |
-| Sale_ID        | Unique transaction ID     |
-| Sale_Date      | Date of transaction       |
-| Store_ID       | Store identifier          |
-| Product_ID     | Product identifier        |
-| Customer_ID    | Customer identifier       |
-| Quantity       | Number of items purchased |
-| Unit_Price     | Price per item            |
-| Discount       | Discount applied          |
-| Total_Amount   | Total transaction value   |
-| Payment_Method | Cash / Card / Online      |
+Column	Description
+Sale_ID	Unique transaction ID
+Sale_Date	Date of transaction
+Store_ID	Store where sale occurred
+Product_ID	Product sold
+Customer_ID	Customer making purchase
+Quantity	Number of items purchased
+Unit_Price	Price per unit
+Discount	Discount applied
+Total_Amount	Final sale value
+Payment_Method	Payment type
+Dimension Tables
 
----
+Stores
 
-### Dimension Tables
+Store_ID
 
-**Stores**
+Store_Name
 
-* Store_ID
-* Store_Name
-* City
-* Region
-* Store_Type
-* Opening_Date
+City
 
-**Products**
+Region
 
-* Product_ID
-* Product_Name
-* Category
-* Subcategory
-* Brand
-* Cost
-* Price
+Store_Type
 
-**Customers**
+Opening_Date
 
-* Customer_ID
-* Gender
-* Age_Group
-* City
-* Loyalty_Member
+Products
 
-**Promotions**
+Product_ID
 
-* Promotion_ID
-* Product_ID
-* Promo_Type
-* Start_Date
-* End_Date
-* Discount_Rate
+Product_Name
 
----
+Category
 
-## 🛠 SQL Skills Demonstrated
+Subcategory
 
-This project showcases the SQL skills required for **Retail Data Analysis**:
+Brand
 
-* SELECT queries
-* Filtering using WHERE
-* Aggregations (SUM, COUNT, AVG)
-* GROUP BY and HAVING
-* Joins (INNER JOIN, LEFT JOIN)
-* Window Functions
-* Ranking functions
-* Date analysis
-* CTEs (Common Table Expressions)
-* Business KPI calculations
+Cost
 
----
+Price
 
-## 📈 Retail KPIs Analyzed
+Customers
 
-The project calculates important retail metrics such as:
+Customer_ID
 
-* Total Revenue
-* Monthly Sales
-* Store Performance
-* Product Ranking
-* Category Sales
-* Customer Purchase Behavior
-* Average Transaction Value
-* Units per Transaction
-* Promotion Impact
+Gender
 
----
+Age_Group
 
-## 📂 Repository Structure
+City
 
-```
+Loyalty_Member
+
+Promotions
+
+Promotion_ID
+
+Product_ID
+
+Promo_Type
+
+Start_Date
+
+End_Date
+
+Discount_Rate
+
+🧰 3. Tools Used
+
+SQL
+
+SQL Server / PostgreSQL
+
+CSV datasets
+
+Power BI (optional visualization)
+
+📊 4. Business Questions
+
+This project answers key retail analytics questions.
+
+1️⃣ What is the total revenue of the business?
+
+SQL file: retail_kpi_analysis.sql
+
+2️⃣ How do sales change over time?
+
+SQL file: retail_kpi_analysis.sql
+
+3️⃣ Which stores generate the highest revenue?
+
+SQL file: store_performance.sql
+
+4️⃣ Which product categories generate the most sales?
+
+SQL file: product_analysis.sql
+
+5️⃣ Who are the most valuable customers?
+
+SQL file: customer_analysis.sql
+
+6️⃣ Do loyalty program members spend more?
+
+SQL file: customer_analysis.sql
+
+7️⃣ Which products sell the most units?
+
+SQL file: product_analysis.sql
+
+8️⃣ How do promotions affect sales?
+
+SQL file: promotion_analysis.sql
+
+9️⃣ Which regions generate the most revenue?
+
+SQL file: store_performance.sql
+
+🔟 Which products are frequently bought together?
+
+SQL file: advanced_retail_analysis.sql
+
+📂 5. Project Structure
 sql-retail-analytics-project
-│
-├── data
-│   ├── sales.csv
-│   ├── stores.csv
-│   ├── products.csv
-│   ├── customers.csv
-│   └── promotions.csv
-│
-├── sql
-│   ├── sales_analysis.sql
-│   ├── store_performance.sql
-│   ├── product_analysis.sql
-│   ├── customer_analysis.sql
-│
-├── dashboards
-│   └── retail_dashboard.pbix
-│
-└── README.md
-```
 
----
+data/
+    sales.csv
+    stores.csv
+    products.csv
+    customers.csv
+    promotions.csv
 
-## 📊 Example Analysis
+sql/
+    retail_kpi_analysis.sql
+    store_performance.sql
+    product_analysis.sql
+    customer_analysis.sql
+    promotion_analysis.sql
+    advanced_retail_analysis.sql
 
-### Monthly Sales Trend
+dashboard/
+    retail_dashboard.pbix
 
-```sql
-SELECT 
-    FORMAT(Sale_Date,'yyyy-MM') AS Month,
-    SUM(Total_Amount) AS Monthly_Revenue
-FROM Sales
-GROUP BY FORMAT(Sale_Date,'yyyy-MM')
-ORDER BY Month;
-```
+README.md
+📈 6. Example Insights
 
----
+Example insights generated from the analysis:
 
-### Top Performing Stores
+A small number of products generate a large portion of revenue.
 
-```sql
-SELECT 
-    Store_ID,
-    SUM(Total_Amount) AS Revenue
-FROM Sales
-GROUP BY Store_ID
-ORDER BY Revenue DESC;
-```
+Certain stores significantly outperform others.
 
----
+Loyalty program customers contribute more revenue.
 
-### Store Ranking
+Sales increase during seasonal promotions.
 
-```sql
-SELECT 
-    Store_ID,
-    SUM(Total_Amount) AS Revenue,
-    DENSE_RANK() OVER(ORDER BY SUM(Total_Amount) DESC) AS Store_Rank
-FROM Sales
-GROUP BY Store_ID;
-```
+🚀 7. Future Improvements
 
----
+Possible improvements for this project:
 
-## 📊 Dashboard 
+Build a Power BI dashboard
 
-A Power BI dashboard can be built using this dataset to visualize:
+Add customer cohort analysis
 
-* Sales trends
-* Store ranking
-* Product category performance
-* Customer segmentation
-* Promotion impact
+Add customer lifetime value (CLV) analysis
 
----
+Add inventory analysis
 
-## 🚀 Tools Used
-
-* SQL
-* SQL Server / PostgreSQL
-* Excel / CSV dataset
-* Power BI (optional for visualization)
-
----
-
-## 📌 Key Learnings
-
-Through this project I practiced:
-
-* Writing analytical SQL queries
-* Working with retail data models
-* Calculating retail KPIs
-* Performing sales trend analysis
-* Using window functions for ranking and comparison
-
----
-
-## 👤 Author
+👤 8. Author
 
 Retail Analytics Portfolio Project
-Focused on **SQL for Retail Analytics and Business Intelligence**
-
----
-
-⭐ If you found this project useful, feel free to **star the repository**.
-
+Focused on SQL for Retail Analytics and Business Intelligence
