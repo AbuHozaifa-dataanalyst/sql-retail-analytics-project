@@ -1,212 +1,253 @@
-# 🛒 SQL Retail Analytics Project
+# 🛒 Retail Business Analytics Project
 
-## 📌 1. Project Overview
+An **end-to-end retail analytics project** that analyzes sales performance, customer behavior, product demand, and promotion effectiveness using **SQL, Python, Excel, and statistical analysis**.
 
-This project demonstrates how **SQL can be used to analyze retail sales data and generate business insights**.
-
-Using a simulated **multi-store retail dataset**, the analysis focuses on:
-
-* Sales performance
-* Store performance
-* Product trends
-* Customer behavior
-* Promotion effectiveness
-
-The goal of this project is to simulate **real-world tasks performed by retail data analysts in supermarkets and retail chains**.
+The goal of this project is to simulate the real work of a **Retail Data Analyst** by transforming raw retail transaction data into **business insights and actionable recommendations**.
 
 ---
 
-# 📊 2. Dataset Structure
+# 📊 Project Overview
 
-The dataset follows a **star schema commonly used in retail analytics**.
+Retail companies generate large volumes of transaction data across stores, products, and customers. Analyzing this data allows businesses to improve revenue, optimize inventory, and understand customer purchasing behavior.
 
-## Fact Table
+This project demonstrates how different analytical tools can be used together to analyze retail data and generate business insights.
 
-### Sales
+The project includes:
 
-| Column         | Description               |
-| -------------- | ------------------------- |
-| Sale_ID        | Unique transaction ID     |
-| Sale_Date      | Date of transaction       |
-| Store_ID       | Store where sale occurred |
-| Product_ID     | Product sold              |
-| Customer_ID    | Customer making purchase  |
-| Quantity       | Number of items purchased |
-| Unit_Price     | Price per unit            |
-| Discount       | Discount applied          |
-| Total_Amount   | Final sale value          |
-| Payment_Method | Payment type              |
+• Data cleaning and transformation
+• Retail KPI analysis
+• Store and product performance analysis
+• Customer segmentation
+• Promotion effectiveness analysis
+• Sales trend and forecasting analysis
+• Business insight generation
 
 ---
 
-## Dimension Tables
+# 🎯 Business Objectives
 
-### Stores
+The project answers several key business questions:
 
-* Store_ID
-* Store_Name
-* City
-* Region
-* Store_Type
-* Opening_Date
+• What are the main drivers of retail revenue?
+• Which stores generate the highest sales?
+• Which products contribute the most to revenue?
+• How do promotions impact sales performance?
+• Are there seasonal patterns in sales?
+• Which customer segments generate the most revenue?
 
-### Products
-
-* Product_ID
-* Product_Name
-* Category
-* Subcategory
-* Brand
-* Cost
-* Price
-
-### Customers
-
-* Customer_ID
-* Gender
-* Age_Group
-* City
-* Loyalty_Member
-
-### Promotions
-
-* Promotion_ID
-* Product_ID
-* Promo_Type
-* Start_Date
-* End_Date
-* Discount_Rate
+Understanding these insights helps retailers improve operational efficiency and strategic decision-making.
 
 ---
 
-# 🧰 3. Tools Used
+# 📂 Dataset Description
 
-* SQL
-* SQL Server / PostgreSQL
-* CSV datasets
-* Power BI (optional visualization)
+The dataset simulates retail transactions and includes the following tables:
 
----
+| Table      | Description                    |
+| ---------- | ------------------------------ |
+| Sales      | Transaction-level sales data   |
+| Stores     | Store location and information |
+| Products   | Product catalog and categories |
+| Customers  | Customer demographics          |
+| Promotions | Promotional campaign data      |
 
-# 📊 4. Business Questions
-
-This project answers key **retail analytics questions**.
-
-### 1️⃣ What is the total revenue of the business?
-
-SQL file: `retail_kpi_analysis.sql`
+These datasets enable analysis across multiple business dimensions including **store performance, product performance, customer behavior, and promotion impact**.
 
 ---
 
-### 2️⃣ How do sales change over time?
+# 🧰 Tools & Technologies
 
-SQL file: `retail_kpi_analysis.sql`
+This project demonstrates the use of multiple analytics tools:
 
----
-
-### 3️⃣ Which stores generate the highest revenue?
-
-SQL file: `store_performance.sql`
-
----
-
-### 4️⃣ Which product categories generate the most sales?
-
-SQL file: `product_analysis.sql`
+• **SQL Server** – Data extraction and analytical queries
+• **Python (Pandas, Matplotlib, Statsmodels)** – Data analysis and forecasting
+• **Excel** – KPI dashboards and trend analysis
+• **Jupyter Notebook** – Statistical analysis
+• **Power BI** – Interactive data visualization
 
 ---
 
-### 5️⃣ Who are the most valuable customers?
+# 📁 Project Structure
 
-SQL file: `customer_analysis.sql`
-
----
-
-### 6️⃣ Do loyalty program members spend more?
-
-SQL file: `customer_analysis.sql`
-
----
-
-### 7️⃣ Which products sell the most units?
-
-SQL file: `product_analysis.sql`
-
----
-
-### 8️⃣ How do promotions affect sales?
-
-SQL file: `promotion_analysis.sql`
-
----
-
-### 9️⃣ Which regions generate the most revenue?
-
-SQL file: `store_performance.sql`
-
----
-
-### 🔟 Which products are frequently bought together?
-
-SQL file: `advanced_retail_analysis.sql`
-
----
-
-# 📂 5. Project Structure
-
-```
-sql-retail-analytics-project
+Retail_Business_Analytics_Project
 
 data/
-    sales.csv
-    stores.csv
-    products.csv
-    customers.csv
-    promotions.csv
+raw/
+processed/
 
 sql/
-    retail_kpi_analysis.sql
-    store_performance.sql
-    product_analysis.sql
-    customer_analysis.sql
-    promotion_analysis.sql
-    advanced_retail_analysis.sql
+01_database_setup.sql
+02_table_creation.sql
+03_data_import.sql
+retail_kpi_analysis.sql
+store_performance.sql
+product_analysis.sql
+customer_analysis.sql
+promotion_analysis.sql
+advanced_retail_analysis.sql
+
+excel/
+retail_kpi_dashboard.xlsx
+sales_trend_analysis.xlsx
+
+python/
+data_cleaning.py
+retail_kpi_analysis.py
+customer_segmentation.py
+demand_forecasting.py
+
+statistics/
+sales_trend_analysis.ipynb
+promotion_effectiveness_test.ipynb
+
+business_analysis/
+retail_business_insights.md
 
 dashboard/
-    retail_dashboard.pbix
+retail_dashboard.pbix
+
+images/
 
 README.md
-```
 
 ---
 
-# 📈 6. Example Insights
+# 🗄 SQL Analysis
 
-Example insights generated from the analysis:
+SQL was used to analyze retail performance across multiple business dimensions.
 
-* A small number of products generate a large portion of revenue.
-* Certain stores significantly outperform others.
-* Loyalty program customers contribute more revenue.
-* Sales increase during seasonal promotions.
+Key analyses include:
 
----
+• Total revenue and sales growth
+• Store performance ranking
+• Product category performance
+• Customer purchase behavior
+• Promotion-driven sales
+• Top performing products
 
-# 🚀 7. Future Improvements
-
-Possible improvements for this project:
-
-* Build a Power BI dashboard
-* Add customer cohort analysis
-* Add customer lifetime value (CLV) analysis
-* Add inventory analysis
+These queries simulate real-world SQL analytics tasks performed by retail data analysts.
 
 ---
 
-# 👤 8. Author
+# 📊 Excel Analytics
+
+Excel was used to build business-friendly KPI dashboards.
+
+The Excel analysis includes:
+
+• Pivot table analysis
+• Retail KPI calculations
+• Interactive dashboard with slicers
+• Sales trend analysis
+• Moving average trend smoothing
+• Revenue breakdown by store and category
+
+---
+
+# 🐍 Python Analytics
+
+Python was used to perform advanced data analysis including:
+
+• Data cleaning and transformation
+• Retail KPI calculation
+• Customer segmentation using **RFM analysis**
+• Demand forecasting using **time series models**
+
+Python scripts in this project simulate the analytical workflows used by data analysts in retail companies.
+
+---
+
+# 📈 Statistical Analysis
+
+Statistical techniques were used to evaluate patterns and business strategies.
+
+Key analyses include:
+
+• Sales trend analysis
+• Seasonal sales pattern detection
+• Moving average smoothing
+• Hypothesis testing for promotion effectiveness
+
+These analyses help determine whether business strategies have a measurable impact on revenue.
+
+---
+
+# 💡 Business Insights
+
+Key insights derived from the analysis include:
+
+• A small percentage of products generate a large share of revenue (Pareto principle).
+• High-value customers contribute significantly to total sales.
+• Promotions increase sales volume but may reduce profit margins.
+• Certain stores consistently outperform others.
+• Seasonal demand patterns influence monthly sales performance.
+
+---
+
+# 📊 Dashboard
+
+An interactive retail dashboard was created using Power BI to visualize key metrics.
+
+Dashboard features include:
+
+• Revenue trend over time
+• Store performance comparison
+• Product category analysis
+• Customer segmentation insights
+• Promotion impact on sales
+
+Example dashboard:
+
+![Retail Dashboard](images/dashboard.png)
+
+---
+
+# 📌 Key Retail KPIs
+
+This project evaluates several important retail metrics:
+
+• Total Revenue
+• Average Transaction Value (ATV)
+• Units per Transaction (UPT)
+• Revenue per Store
+• Customer Lifetime Value
+• Promotion Sales Contribution
+
+These KPIs help retailers measure business performance and identify improvement opportunities.
+
+---
+
+# 🚀 Business Recommendations
+
+Based on the analysis, the following strategies are recommended:
+
+1. Focus on high-performing products and ensure adequate inventory levels.
+
+2. Expand targeted marketing campaigns for high-value customers.
+
+3. Implement strategic promotions during seasonal demand peaks.
+
+4. Improve performance of underperforming stores through better merchandising strategies.
+
+5. Use demand forecasting to improve inventory planning and reduce stockouts.
+
+---
+
+# 📌 Project Highlights
+
+This project demonstrates the following analytical skills:
+
+• Retail domain knowledge
+• SQL data analysis
+• Python data analytics
+• Excel business dashboards
+• Statistical analysis
+• Data visualization
+• Business insight generation
+
+---
+
+# 👨‍💻 Author
 
 Retail Analytics Portfolio Project
-Focused on **SQL for Retail Analytics and Business Intelligence**
-
----
-
-⭐ If you found this project useful, consider **starring the repository**.
+Designed to demonstrate practical skills in **data analytics, retail business intelligence, and decision support**.
