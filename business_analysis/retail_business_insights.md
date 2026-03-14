@@ -97,6 +97,4 @@ Based on the analysis, the following recommendations are proposed:
 
 5. Develop loyalty programs to increase repeat purchases among valuable customers.
 
-## Sales Trend
 
-![Sales Trend](../images/sales_trend_analysis.png)
